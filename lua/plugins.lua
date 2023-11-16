@@ -91,7 +91,10 @@ dependencies = { 'nvim-lua/plenary.nvim', { "nvim-telescope/telescope-fzf-native
 	event = "VimEnter" },
 	{ "windwp/nvim-autopairs",
 	event = "InsertEnter",
-	opts = {} }
+	opts = {} },
+	{'numToStr/Comment.nvim',
+	opts = {},
+	lazy = false}
 })
 
 require('transparent').clear_prefix('lazy')

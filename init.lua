@@ -10,6 +10,7 @@ require('mason-conf')
 require('nvim-cmp')
 require('cop')
 require('emmet')
+require('commentary')
 
 require('transparent').clear_prefix('NeoTree')
 require('transparent').clear_prefix('Telescope')
