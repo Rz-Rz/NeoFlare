@@ -88,7 +88,10 @@ dependencies = { 'nvim-lua/plenary.nvim', { "nvim-telescope/telescope-fzf-native
 		},
 	},
 	{ "zbirenbaum/copilot.lua",
-	event = "VimEnter" }
+	event = "VimEnter" },
+	{ "windwp/nvim-autopairs",
+	event = "InsertEnter",
+	opts = {} }
 })
 
 require('transparent').clear_prefix('lazy')
