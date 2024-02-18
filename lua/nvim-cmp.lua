@@ -78,3 +78,12 @@
   require('lspconfig')['tailwindcss'].setup {
     capabilities = capabilities
   }
+  -- Adding Pyright for Python support
+require('lspconfig')['pyright'].setup {
+  capabilities = capabilities
+}
+
+-- Adding cssls for CSS support
+require('lspconfig')['cssls'].setup {
+  capabilities = capabilities
+}

@@ -13,6 +13,15 @@ require('emmet')
 require('commentary')
 require('options')
 require('luasnip-conf')
+require('null-ls-config')
 
 require('transparent').clear_prefix('NeoTree')
 require('transparent').clear_prefix('Telescope')
+require('telescope').setup({
+	defaults = {
+   		preview = {
+   			treesitter = false,
+   		},
+   },
+})
+require('telescope').load_extension('fzf')
