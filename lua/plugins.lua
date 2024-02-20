@@ -112,7 +112,8 @@ dependencies = { "folke/neodev.nvim" }
   {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = { "nvim-lua/plenary.nvim"},
-  }
+  },
+  { "mattn/emmet-vim", event = "InsertEnter" },
 })
 
 require('transparent').clear_prefix('lazy')
