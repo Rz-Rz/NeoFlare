@@ -1,18 +1,18 @@
 require("lazy").setup({
-  "folke/which-key.nvim", 
-  { "folke/neoconf.nvim", cmd = "Neoconf" }, 
+  "folke/which-key.nvim",
+  { "folke/neoconf.nvim", cmd = "Neoconf" },
   "folke/neodev.nvim",
-  { "nvim-telescope/telescope.nvim", tag = '0.1.4', 
+  { "nvim-telescope/telescope.nvim", tag = '0.1.4',
   dependencies = { 'nvim-lua/plenary.nvim', { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = false } }
 },
 { "williamboman/mason.nvim" },
 { "williamboman/mason-lspconfig.nvim",
-dependencies = { 
+dependencies = {
   "williamboman/mason.nvim",
   "nvim-lua/plenary.nvim", }
 },
 { "neovim/nvim-lspconfig",
-dependencies = { "folke/neodev.nvim" }
+dependencies = { "folke/neodev.nvim"},
   },
   -- Adding nvim-treesitter and its dependencies
   {
@@ -114,6 +114,22 @@ dependencies = { "folke/neodev.nvim" }
     dependencies = { "nvim-lua/plenary.nvim"},
   },
   { "mattn/emmet-vim", event = "InsertEnter" },
+  {
+    'linux-cultist/venv-selector.nvim',
+    dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
+    opts = {
+      -- Your options go here
+      -- name = "venv",
+      -- auto_refresh = false
+    },
+    event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    keys = {
+      -- Keymap to open VenvSelector to pick a venv.
+      { '<leader>vs', '<cmd>VenvSelect<cr>' },
+      -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+      { '<leader>vc', '<cmd>VenvSelectCached<cr>' },
+    },
+  },
 })
 
 require('transparent').clear_prefix('lazy')
