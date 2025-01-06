@@ -24,12 +24,13 @@ keymap('n', '<leader>a', ':BufferLineCyclePrev<CR>', opts)
 keymap('n', '<leader>x', ':BufferLinePickClose<CR>', opts)
 
 --Trouble
-keymap("n", "<leader>c", "<cmd>TroubleToggle<cr>", opts)
-keymap("n", "<leader>cw", "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>cd", "<cmd>TroubleToggle lsp_document_diagnostics<cr>", opts)
-keymap("n", "<leader>cl", "<cmd>TroubleToggle loclist<cr>", opts)
-keymap("n", "<leader>cq", "<cmd>TroubleToggle quickfix<cr>", opts)
-keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+keymap("n", "<leader>c", "<cmd>Trouble diagnostics toggle<cr>", opts)
+
+-- LSP Code Action
+keymap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+-- LSP Hover
+keymap("n", "<leader>ch", vim.lsp.buf.hover, opts)
+keymap("n", "<leader>cd", vim.lsp.buf.definition, opts)
 
 -- NULL LS 
 -- NULL LS WITH djlint 
