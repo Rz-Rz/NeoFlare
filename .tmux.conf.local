@@ -48,3 +48,9 @@ set-window-option -g window-status-current-format "#[bg=colour214,fg=colour237,n
 set-window-option -g window-status-format "#[bg=colour239,fg=colour237,noitalics]#[bg=colour239,fg=colour223] #I #[bg=colour239,fg=colour223] #W #[bg=colour237,fg=colour239,noitalics]"
 
 # vim: set ft=tmux tw=0 nowrap:
+# vim: set ft=tmux tw=0 nowrap:
+set -g mouse on            # enable all mouse features (scroll, select, resize)
+
+# (optional) keep a bigger history so you can scroll back further
+set -g history-limit 20000
+set -g allow-passthrough on
