@@ -1,6 +1,6 @@
 # dotfiles
 
-nvim (NvChad v2.5) + tmux (gruvbox, tpm).
+nvim (NvChad v2.5) + tmux (gruvbox, tpm) + zsh (oh-my-zsh, powerlevel10k) + Windows Terminal.
 
     git clone git@github.com:Rz-Rz/dotfiles.git ~/opt/dotfiles && ~/opt/dotfiles/install.sh
 
@@ -8,7 +8,8 @@ nvim (NvChad v2.5) + tmux (gruvbox, tpm).
 
 - apt-installs git, curl, tmux, ripgrep, build-essential, unzip, node, npm, python3-venv if missing
 - drops the latest neovim tarball in `~/opt` and links it to `~/.local/bin/nvim`
-- symlinks `~/.config/nvim -> nvim/` and `~/.tmux.conf -> .tmux.conf` (existing files go to `*.bak.<timestamp>`)
+- symlinks `~/.config/nvim`, `~/.tmux.conf`, `~/.zshrc`, `~/.p10k.zsh` into the repo (existing files go to `*.bak.<timestamp>`)
+- clones oh-my-zsh, powerlevel10k and nvm, makes zsh the login shell
 - installs tpm + tmux plugins, and nvim plugins pinned to `lazy-lock.json`
 
 - under WSL, also copies `windows-terminal/settings.json` (Gruvbox Dark, FiraCode Nerd Font) over the Windows Terminal settings

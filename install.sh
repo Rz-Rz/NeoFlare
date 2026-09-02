@@ -8,7 +8,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # --- system packages (Debian/Ubuntu); only calls sudo if something is missing ---
 if command -v apt-get >/dev/null; then
   need=()
-  for pair in git:git curl:curl tmux:tmux ripgrep:rg build-essential:gcc unzip:unzip nodejs:node npm:npm python3-venv:python3; do
+  for pair in git:git curl:curl zsh:zsh tmux:tmux ripgrep:rg build-essential:gcc unzip:unzip nodejs:node npm:npm python3-venv:python3; do
     command -v "${pair#*:}" >/dev/null || need+=("${pair%%:*}")
   done
   if [ ${#need[@]} -gt 0 ]; then
@@ -31,6 +31,14 @@ link() {
 }
 link "$here/nvim"       "$HOME/.config/nvim"
 link "$here/.tmux.conf" "$HOME/.tmux.conf"
+link "$here/zshrc"      "$HOME/.zshrc"
+link "$here/p10k.zsh"   "$HOME/.p10k.zsh"
+
+# --- zsh: oh-my-zsh + powerlevel10k + nvm ---
+[ -d ~/.oh-my-zsh ] || git clone -q --depth 1 https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
+[ -d ~/.oh-my-zsh/custom/themes/powerlevel10k ] || git clone -q --depth 1 https://github.com/romkatv/powerlevel10k ~/.oh-my-zsh/custom/themes/powerlevel10k
+[ -d ~/.nvm ] || curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | PROFILE=/dev/null bash
+[ "$(basename "$SHELL")" = zsh ] || chsh -s "$(command -v zsh)" || echo "chsh failed; run: chsh -s $(command -v zsh)"
 
 # --- plugins ---
 [ -d ~/.tmux/plugins/tpm ] || git clone -q --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
