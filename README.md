@@ -1,10 +1,16 @@
-# NeoFlare
+# dotfiles
 
-nvim (NvChad v2.5) + tmux (gruvbox, tpm) config.
+nvim (NvChad v2.5) + tmux (gruvbox, tpm).
 
-    git clone git@github.com:Rz-Rz/NeoFlare.git ~/opt/NeoFlare
-    ~/opt/NeoFlare/install.sh
+    git clone https://github.com/Rz-Rz/dotfiles.git ~/opt/dotfiles && ~/opt/dotfiles/install.sh
 
-Symlinks `~/.config/nvim -> nvim_v2` and `~/.tmux.conf -> .tmux.conf` (anything already there is moved to `*.bak.<timestamp>`), installs tpm and its plugins. Needs git, tmux >= 3.0, nvim >= 0.10. First `nvim` launch pulls plugins; then `:MasonInstallAll` for LSPs.
+`install.sh` (Debian/Ubuntu, idempotent):
+
+- apt-installs git, curl, tmux, ripgrep, build-essential, unzip, node, npm, python3-venv if missing
+- drops the latest neovim tarball in `~/opt` and links it to `~/.local/bin/nvim`
+- symlinks `~/.config/nvim -> nvim/` and `~/.tmux.conf -> .tmux.conf` (existing files go to `*.bak.<timestamp>`)
+- installs tpm + tmux plugins, and nvim plugins pinned to `lazy-lock.json`
+
+Then open nvim and run `:MasonInstallAll` once for LSPs and formatters.
 
 `nvim_v1/` is the old pre-NvChad config, kept for reference.

@@ -49,10 +49,23 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
+			-- everything :MasonInstallAll should pull on a fresh machine
 			ensure_installed = {
-				"typescript-language-server",
-				"tailwindcss-language-server",
+				"asm-lsp",
+				"basedpyright",
+				"black",
+				"clangd",
+				"css-lsp",
 				"eslint-lsp",
+				"html-lsp",
+				"isort",
+				"jedi-language-server",
+				"lua-language-server",
+				"prettier",
+				"rust-analyzer",
+				"stylua",
+				"tailwindcss-language-server",
+				"typescript-language-server",
 			},
 		},
 	},
