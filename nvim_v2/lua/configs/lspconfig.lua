@@ -3,8 +3,18 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require("lspconfig")
 
--- EXAMPLE
-local servers = { "html", "cssls", "jedi_language_server", "basedpyright" }
+-- servers only attach when their binary exists, so this list is the union of every machine's needs
+local servers = {
+	"html",
+	"cssls",
+	"ts_ls",
+	"tailwindcss",
+	"eslint",
+	"asm_lsp",
+	"rust_analyzer",
+	"jedi_language_server",
+	"basedpyright",
+}
 local nvlsp = require("nvchad.configs.lspconfig")
 
 -- lsps with default config
@@ -24,10 +34,3 @@ lspconfig.clangd.setup({
 	-- Add the --clang-tidy flag to the command used to launch clangd.
 	cmd = { "clangd", "--clang-tidy", "--clang-tidy-checks=-cppcoreguidelines-pro-type-vararg" },
 })
-
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
