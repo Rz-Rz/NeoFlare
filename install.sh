@@ -37,4 +37,11 @@ link "$here/.tmux.conf" "$HOME/.tmux.conf"
 ~/.tmux/plugins/tpm/bin/install_plugins
 nvim --headless "+Lazy! restore" +qa
 
+# --- windows terminal (only when running inside WSL) ---
+for wt in /mnt/c/Users/*/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState; do
+  [ -d "$wt" ] || continue
+  [ -f "$wt/settings.json" ] && cp "$wt/settings.json" "$wt/settings.json.bak.$(date +%s)"
+  cp "$here/windows-terminal/settings.json" "$wt/settings.json" && echo "windows terminal settings -> $wt (needs FiraCode Nerd Font installed on Windows)"
+done
+
 echo "done. open nvim and run :MasonInstallAll once for LSPs/formatters."
