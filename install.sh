@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# git clone https://github.com/Rz-Rz/dotfiles.git ~/opt/dotfiles && ~/opt/dotfiles/install.sh
+# git clone git@github.com:Rz-Rz/dotfiles.git ~/opt/dotfiles && ~/opt/dotfiles/install.sh
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd -P)"
 mkdir -p ~/opt ~/.local/bin ~/.config

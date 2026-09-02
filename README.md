@@ -2,7 +2,7 @@
 
 nvim (NvChad v2.5) + tmux (gruvbox, tpm).
 
-    git clone https://github.com/Rz-Rz/dotfiles.git ~/opt/dotfiles && ~/opt/dotfiles/install.sh
+    git clone git@github.com:Rz-Rz/dotfiles.git ~/opt/dotfiles && ~/opt/dotfiles/install.sh
 
 `install.sh` (Debian/Ubuntu, idempotent):
 
